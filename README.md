@@ -3,11 +3,11 @@ CLI to help you find a baby name. Uses 2022 SSN names data.
 
 # usage:
 
-- git clone repo. 
-- run `go run main.go`
+- git clone https://github.com/briansterle/babynamegen
+- run `./babynamegen.exe` (or `./babynamegen` for macOS) 
 
 ```sh
-$ go run main.go 
+$ ./babynamegen
 babynamegen helps you find a baby name. uses 2022 SSN names data.
 enter gender (boy/girl): boy
 pick from the top how many names? (default 1000): 50
