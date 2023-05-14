@@ -21,7 +21,7 @@ type NameData struct {
 
 func main() {
 	// Open the HTML file
-	file, err := os.Open("2022babynames.html")
+	file, err := os.Open("data/2022babynames.html")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
@@ -48,14 +48,16 @@ func main() {
 		return
 	}
 
+	fmt.Println("babynamegen helps you find a baby name. uses 2022 SSN names data.")
+
 	// Prompt the user for the initial gender
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter gender (boy/girl): ")
+	fmt.Print("enter gender (boy/girl): ")
 	genderInput, _ := reader.ReadString('\n')
 	gender := strings.TrimSpace(strings.ToLower(genderInput))
 
 	// Prompt the user for the number of names to choose between
-	fmt.Print("Enter the number of names to choose between: ")
+	fmt.Print("pick from the top how many names? (default 1000): ")
 	numNamesInput, _ := reader.ReadString('\n')
 	numNamesInput = strings.TrimSpace(numNamesInput)
 	numNames := len(nameData)
@@ -71,17 +73,17 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	for {
 		if gender == "boy" {
-			fmt.Println("Press enter (or type 'girl')")
+			fmt.Println("press enter (or type 'girl')")
 		} else if gender == "girl" {
-			fmt.Println("Press enter (or type 'boy')")
+			fmt.Println("press enter (or type 'boy')")
 		} else {
-			fmt.Println("Invalid gender choice. Please choose 'boy' or 'girl'.")
+			fmt.Println("invalid gender choice. Please choose 'boy' or 'girl'.")
 			break
 		}
 
 		input, err := reader.ReadString('\n')
 		if err != nil {
-			fmt.Println("Error reading input:", err)
+			fmt.Println("error reading input:", err)
 			return
 		}
 
@@ -92,7 +94,7 @@ func main() {
 		} else if input == "girl" {
 			gender = "girl"
 		} else if input == "quit" || input == "q" {
-			fmt.Println("Goodbye.")
+			fmt.Println("goodbye.")
 			break
 		}
 
