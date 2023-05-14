@@ -4,7 +4,7 @@ CLI to help you find a baby name. Uses 2022 SSN names data.
 # usage:
 
 - git clone https://github.com/briansterle/babynamegen
-- run `./babynamegen.exe` (or `./babynamegen` for macOS) 
+- run `bin/babynamegen.exe` (or `bin/babynamegen` for macOS) 
 
 ```sh
 $ ./babynamegen
