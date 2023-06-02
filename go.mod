@@ -1,4 +1,4 @@
-module sterle/babynamegen
+module github.com/briansterle/babynamegen
 
 go 1.20
 
